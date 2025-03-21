@@ -71,7 +71,7 @@ npm run dev
 ## Environment Variables
 
 The application uses the following environment variables:
-| Variable | Description |
+|Variable|Description|
 | -------- | ----------- |
 | `PORT` | Port number for the server |
 | `SERVER_URL` | Base URL of the server |
