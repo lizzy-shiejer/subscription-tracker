@@ -42,3 +42,49 @@ npm run dev
 ```
 
 ## API Endpoints
+
+1. Authentication
+   - POST `/api/v1/auth/sign-up`: Register a new user.
+   - POST `/api/v1/auth/sign-in`: Log in a user.
+   - POST `/api/v1/auth/sign-out`: Log out a user.
+2. Users
+   - GET `/api/v1/users`: Get all users (admin only).
+   - GET `/api/v1/users/:id`: Get a specific user (requires authorization).
+3. Subscriptions
+   - POST `/api/v1/subscriptions`: Create a new subscription (requires authorization).
+   - GET `/api/v1/subscriptions`: Get all subscriptions.
+   - GET `/api/v1/subscriptions/:id`: Get a specific subscription.
+   - GET /`api/v1/subscriptions/user/:id`: Get subscriptions for a specific user (requires authorization).
+4. Workflows
+   - POST `/api/v1/workflows/subscription/reminder`: Trigger subscription renewal reminders.
+
+## Technologies Used
+
+- **Node.js**: JavaScript runtime for building the backend.
+- **Express**: Web framework for creating RESTful APIs.
+- **MongoDB**: NoSQL database for storing user and subscription data.
+- **Mongoose**: ODM for MongoDB.
+- **JWT**: Secure authentication and authorization.
+- **Arcjet**: Bot protection and rate limiting.
+- **Upstash** Workflow: Workflow automation for subscription reminders.
+
+## Environment Variables
+
+The application uses the following environment variables:
+| Variable | Description |
+| -------- | ----------- |
+| `PORT` | Port number for the server |
+| `SERVER_URL` | Base URL of the server |
+| `NODE_ENV` | Environment (`development` or `production`) |
+| `DB_URI` | MongoDB<vscode_annotation details='%5B%7B%22title%22%3A%22hardcoded-credentials%22%2C%22description%22%3A%22Embedding%20credentials%20in%20source%20code%20risks%20unauthorized%20access%22%7D%5D'> connection</vscode_annotation> URI |
+| `JWT_SECRET` | Secret key for JWT |
+| `JWT_EXPIRES_IN` | JWT expiration time |
+| `ARCJET_KEY` | Arcjet API key |
+| `QSTASH_URL` | Upstash Workflow base URL |
+| `QSTASH_TOKEN` | Upstash Workflow token |
+| `QSTASH_CURRENT_SIGNING_KEY` | Current signing key for Upstash |
+| `QSTASH_NEXT_SIGNING_KEY` | Next signing key for Upstash |
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
